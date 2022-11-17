@@ -12,9 +12,9 @@ namespace SibersTestTask.Pages.Employees
 {
     public class IndexModel : PageModel
     {
-        private readonly SibersTestTask.Data.EmployeeContext _context;
+        private readonly SibersTestTask.Data.SibersTestTaskContext _context;
 
-        public IndexModel(SibersTestTask.Data.EmployeeContext context)
+        public IndexModel(SibersTestTask.Data.SibersTestTaskContext context)
         {
             _context = context;
         }
@@ -23,9 +23,9 @@ namespace SibersTestTask.Pages.Employees
 
         public async Task OnGetAsync()
         {
-            if (_context.Employee != null)
+            if (_context.Employees != null)
             {
-                Employee = await _context.Employee.ToListAsync();
+                Employee = await _context.Employees.ToListAsync();
             }
         }
     }

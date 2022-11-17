@@ -12,9 +12,9 @@ namespace SibersTestTask.Pages.Projects
 {
     public class DeleteModel : PageModel
     {
-        private readonly SibersTestTask.Data.ProjectContext _context;
+        private readonly SibersTestTask.Data.SibersTestTaskContext _context;
 
-        public DeleteModel(SibersTestTask.Data.ProjectContext context)
+        public DeleteModel(SibersTestTask.Data.SibersTestTaskContext context)
         {
             _context = context;
         }

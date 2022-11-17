@@ -12,9 +12,9 @@ namespace SibersTestTask.Pages.Employees
 {
     public class DeleteModel : PageModel
     {
-        private readonly SibersTestTask.Data.EmployeeContext _context;
+        private readonly SibersTestTask.Data.SibersTestTaskContext _context;
 
-        public DeleteModel(SibersTestTask.Data.EmployeeContext context)
+        public DeleteModel(SibersTestTask.Data.SibersTestTaskContext context)
         {
             _context = context;
         }
@@ -24,12 +24,12 @@ namespace SibersTestTask.Pages.Employees
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Employee == null)
+            if (id == null || _context.Employees == null)
             {
                 return NotFound();
             }
 
-            var employee = await _context.Employee.FirstOrDefaultAsync(m => m.IdEmployee == id);
+            var employee = await _context.Employees.FirstOrDefaultAsync(m => m.IdEmployee == id);
 
             if (employee == null)
             {
@@ -44,16 +44,16 @@ namespace SibersTestTask.Pages.Employees
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (id == null || _context.Employee == null)
+            if (id == null || _context.Employees == null)
             {
                 return NotFound();
             }
-            var employee = await _context.Employee.FindAsync(id);
+            var employee = await _context.Employees.FindAsync(id);
 
             if (employee != null)
             {
                 Employee = employee;
-                _context.Employee.Remove(Employee);
+                _context.Employees.Remove(Employee);
                 await _context.SaveChangesAsync();
             }
 

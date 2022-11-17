@@ -13,9 +13,9 @@ namespace SibersTestTask.Pages.Projects
 {
     public class EditModel : PageModel
     {
-        private readonly SibersTestTask.Data.ProjectContext _context;
+        private readonly SibersTestTask.Data.SibersTestTaskContext _context;
 
-        public EditModel(SibersTestTask.Data.ProjectContext context)
+        public EditModel(SibersTestTask.Data.SibersTestTaskContext context)
         {
             _context = context;
         }

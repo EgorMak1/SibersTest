@@ -12,9 +12,9 @@ namespace SibersTestTask.Pages.Projects
 {
     public class CreateModel : PageModel
     {
-        private readonly SibersTestTask.Data.ProjectContext _context;
+        private readonly SibersTestTask.Data.SibersTestTaskContext _context;
 
-        public CreateModel(SibersTestTask.Data.ProjectContext context)
+        public CreateModel(SibersTestTask.Data.SibersTestTaskContext context)
         {
             _context = context;
         }

@@ -12,9 +12,9 @@ namespace SibersTestTask.Pages.Employees
 {
     public class CreateModel : PageModel
     {
-        private readonly SibersTestTask.Data.EmployeeContext _context;
+        private readonly SibersTestTask.Data.SibersTestTaskContext _context;
 
-        public CreateModel(SibersTestTask.Data.EmployeeContext context)
+        public CreateModel(SibersTestTask.Data.SibersTestTaskContext context)
         {
             _context = context;
         }
@@ -36,7 +36,7 @@ namespace SibersTestTask.Pages.Employees
                 return Page();
             }
 
-            _context.Employee.Add(Employee);
+            _context.Employees.Add(Employee);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

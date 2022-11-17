@@ -12,9 +12,9 @@ namespace SibersTestTask.Pages.Employees
 {
     public class DetailsModel : PageModel
     {
-        private readonly SibersTestTask.Data.EmployeeContext _context;
+        private readonly SibersTestTask.Data.SibersTestTaskContext _context;
 
-        public DetailsModel(SibersTestTask.Data.EmployeeContext context)
+        public DetailsModel(SibersTestTask.Data.SibersTestTaskContext context)
         {
             _context = context;
         }
@@ -23,12 +23,12 @@ namespace SibersTestTask.Pages.Employees
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Employee == null)
+            if (id == null || _context.Employees == null)
             {
                 return NotFound();
             }
 
-            var employee = await _context.Employee.FirstOrDefaultAsync(m => m.IdEmployee == id);
+            var employee = await _context.Employees.FirstOrDefaultAsync(m => m.IdEmployee == id);
             if (employee == null)
             {
                 return NotFound();

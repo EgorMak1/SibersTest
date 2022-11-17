@@ -1,14 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using SibersTestTask.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddDbContext<EmployeeContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("EmployeeContext") ?? throw new InvalidOperationException("Connection string 'EmployeeContext' not found.")));
-builder.Services.AddDbContext<ProjectContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ProjectContext") ?? throw new InvalidOperationException("Connection string 'ProjectContext' not found.")));
+builder.Services.AddDbContext<SibersTestTaskContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SibersTestTaskContext") ?? throw new InvalidOperationException("Connection string 'SibersTestTaskContext' not found.")));
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -31,9 +30,10 @@ using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
 
-    var context = services.GetRequiredService<ProjectContext>();
-    context.Database.EnsureCreated();
-    // DbInitializer.Initialize(context);
+  
+   
+
+    //DbInitializer.Initialize(context);
 }
 
 app.UseHttpsRedirection();

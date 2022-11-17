@@ -12,9 +12,9 @@ namespace SibersTestTask.Pages.Projects
 {
     public class IndexModel : PageModel
     {
-        private readonly SibersTestTask.Data.ProjectContext _context;
+        private readonly SibersTestTask.Data.SibersTestTaskContext _context;
 
-        public IndexModel(SibersTestTask.Data.ProjectContext context)
+        public IndexModel(SibersTestTask.Data.SibersTestTaskContext context)
         {
             _context = context;
         }
