@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "neJ1CSkgfbuTV/Tx4/np/Oee4sLrIwta1sE27rSFhxNfT0vDbuuWyRJ1daQwKIxEHAUYRKNR3yrjRwf2VXOUwQ==",
+  "dgSpecHash": "/kDrJC7iaax3b7ZjQzBBE1y3TuzZf8whDbAK3OG/koTKcjPTh8VxuoT0l20tbFbz/016t4CO9M469lreeSIx6A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Cactus\\Desktop\\SibersTestTask\\SibersTestTask\\SibersTestTask.csproj",
+  "projectFilePath": "C:\\Users\\Cactus\\Desktop\\ForJob\\Sibers\\SibersTestTask\\SibersTestTask\\SibersTestTask.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Cactus\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Cactus\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

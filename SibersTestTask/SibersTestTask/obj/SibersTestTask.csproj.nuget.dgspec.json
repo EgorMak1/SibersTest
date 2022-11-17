@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Cactus\\Desktop\\SibersTestTask\\SibersTestTask\\SibersTestTask.csproj": {}
+    "C:\\Users\\Cactus\\Desktop\\ForJob\\Sibers\\SibersTestTask\\SibersTestTask\\SibersTestTask.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Cactus\\Desktop\\SibersTestTask\\SibersTestTask\\SibersTestTask.csproj": {
+    "C:\\Users\\Cactus\\Desktop\\ForJob\\Sibers\\SibersTestTask\\SibersTestTask\\SibersTestTask.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Cactus\\Desktop\\SibersTestTask\\SibersTestTask\\SibersTestTask.csproj",
+        "projectUniqueName": "C:\\Users\\Cactus\\Desktop\\ForJob\\Sibers\\SibersTestTask\\SibersTestTask\\SibersTestTask.csproj",
         "projectName": "SibersTestTask",
-        "projectPath": "C:\\Users\\Cactus\\Desktop\\SibersTestTask\\SibersTestTask\\SibersTestTask.csproj",
+        "projectPath": "C:\\Users\\Cactus\\Desktop\\ForJob\\Sibers\\SibersTestTask\\SibersTestTask\\SibersTestTask.csproj",
         "packagesPath": "C:\\Users\\Cactus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Cactus\\Desktop\\SibersTestTask\\SibersTestTask\\obj\\",
+        "outputPath": "C:\\Users\\Cactus\\Desktop\\ForJob\\Sibers\\SibersTestTask\\SibersTestTask\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
