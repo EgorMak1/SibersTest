@@ -31,15 +31,20 @@
             <th>
                 @Html.DisplayNameFor(model => model.Project[0].StartDate)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeesInProject[0].Id)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model.Project) {
+            var z = item.IdProject;
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.IdLeadProject)
             </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.Priority)
             </td>
@@ -55,6 +60,16 @@
             <td>
                 @Html.DisplayFor(modelItem => item.StartDate)
             </td>
+           <td>
+                    @foreach(var itemm in Model.EmployeesInProject)
+                    {
+
+                        if (z == item.IdProject)
+                        {
+                         
+                        }
+                    }
+            </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.IdProject">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.IdProject">Details</a> |
@@ -62,5 +77,6 @@
             </td>
         </tr>
 }
+       
     </tbody>
 </table>
