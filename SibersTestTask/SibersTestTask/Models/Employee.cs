@@ -8,6 +8,12 @@
         public string Surname { get; set; }
         public string Email { get; set; }
 
-        public ICollection<Leader> Leaders { get; set; }
+
+
+        public ICollection<EmployeesInProject> EmployeesInProjects { get; set; }
+        public ICollection<Leader> Leader { get; set; }
+
+
+
     }
 }

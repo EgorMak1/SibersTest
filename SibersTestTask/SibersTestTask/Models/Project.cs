@@ -12,6 +12,10 @@
         public DateTime StartDate { get; set; }
 
 
+
+
+        public ICollection<EmployeesInProject> EmployeesInProjects { get; set; }
         public Leader Leader { get; set; }
+
     }
 }
