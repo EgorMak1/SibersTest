@@ -73,30 +73,37 @@ namespace SibersTestTask.Migrations
                 name: "EmployeesInProject",
                 columns: table => new
                 {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     IdEmployee = table.Column<int>(type: "int", nullable: false),
-                    IdProject = table.Column<int>(type: "int", nullable: false)
+                    IdProject = table.Column<int>(type: "int", nullable: false),
+                    ProjectIdProject = table.Column<int>(type: "int", nullable: true),
+                    EmployeeIdEmployee = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_EmployeesInProject", x => new { x.IdEmployee, x.IdProject });
+                    table.PrimaryKey("PK_EmployeesInProject", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_EmployeesInProject_Employee_IdEmployee",
-                        column: x => x.IdEmployee,
+                        name: "FK_EmployeesInProject_Employee_EmployeeIdEmployee",
+                        column: x => x.EmployeeIdEmployee,
                         principalTable: "Employee",
-                        principalColumn: "IdEmployee",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "IdEmployee");
                     table.ForeignKey(
-                        name: "FK_EmployeesInProject_Project_IdProject",
-                        column: x => x.IdProject,
+                        name: "FK_EmployeesInProject_Project_ProjectIdProject",
+                        column: x => x.ProjectIdProject,
                         principalTable: "Project",
-                        principalColumn: "IdProject",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "IdProject");
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_EmployeesInProject_IdProject",
+                name: "IX_EmployeesInProject_EmployeeIdEmployee",
                 table: "EmployeesInProject",
-                column: "IdProject");
+                column: "EmployeeIdEmployee");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_EmployeesInProject_ProjectIdProject",
+                table: "EmployeesInProject",
+                column: "ProjectIdProject");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Leader_EmployeeIdEmployee",

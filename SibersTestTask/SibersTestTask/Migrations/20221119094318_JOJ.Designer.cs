@@ -12,7 +12,7 @@ using SibersTestTask.Data;
 namespace SibersTestTask.Migrations
 {
     [DbContext(typeof(SibersTestTaskContext))]
-    [Migration("20221119084617_JOJ")]
+    [Migration("20221119094318_JOJ")]
     partial class JOJ
     {
         /// <inheritdoc />
@@ -49,15 +49,29 @@ namespace SibersTestTask.Migrations
 
             modelBuilder.Entity("SibersTestTask.Models.EmployeesInProject", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("EmployeeIdEmployee")
+                        .HasColumnType("int");
+
                     b.Property<int>("IdEmployee")
                         .HasColumnType("int");
 
                     b.Property<int>("IdProject")
                         .HasColumnType("int");
 
-                    b.HasKey("IdEmployee", "IdProject");
+                    b.Property<int?>("ProjectIdProject")
+                        .HasColumnType("int");
 
-                    b.HasIndex("IdProject");
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeIdEmployee");
+
+                    b.HasIndex("ProjectIdProject");
 
                     b.ToTable("EmployeesInProject");
                 });
@@ -123,15 +137,11 @@ namespace SibersTestTask.Migrations
                 {
                     b.HasOne("SibersTestTask.Models.Employee", "Employee")
                         .WithMany("EmployeesInProjects")
-                        .HasForeignKey("IdEmployee")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("EmployeeIdEmployee");
 
                     b.HasOne("SibersTestTask.Models.Project", "Project")
                         .WithMany("EmployeesInProjects")
-                        .HasForeignKey("IdProject")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ProjectIdProject");
 
                     b.Navigation("Employee");
 

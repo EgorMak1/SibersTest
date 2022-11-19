@@ -1,11 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace SibersTestTask.Models
 {
-    [PrimaryKey(nameof(IdEmployee), nameof(IdProject))]
+    
     public class EmployeesInProject
     {
-        
+        [Key]
+        public int Id { get; set; }
         public int IdEmployee { get; set; }
         public int IdProject { get; set; }
 
